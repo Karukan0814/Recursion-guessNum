@@ -1,0 +1,27 @@
+import random
+import sys
+
+sys.stdout.buffer.write(b"Please input min\n")
+sys.stdout.flush()
+min_val = int(sys.stdin.buffer.readline())
+sys.stdout.buffer.write(b"Please input max\n")
+sys.stdout.flush()
+max_val = int(sys.stdin.buffer.readline())
+
+
+ans = random.randint(min_val, max_val)
+attempts = 3
+
+for _ in range(attempts):
+    sys.stdout.buffer.write(b"Guess the number\n")
+    sys.stdout.flush()
+    num = sys.stdin.buffer.readline()
+    num = int(num)
+    if num == ans:
+        print("Correct")
+        break
+    else:
+        print("Wrong")
+
+else:
+    print("Failed! Try again!")
